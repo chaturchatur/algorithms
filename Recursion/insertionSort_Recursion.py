@@ -7,6 +7,7 @@ def insert(array, element):
    insert(array, element)  # Recursively insert into smaller array
    array.append(last)  # Reinsert last element in its sorted position
 
+
 def sortArrayRecursive(array):
    """Sorts an array using insertion sort recursively."""
    if not array:
@@ -14,6 +15,7 @@ def sortArrayRecursive(array):
    last = array.pop()  # Remove last element
    sortArrayRecursive(array)  # Sort remaining elements
    insert(array, last)  # Insert last element in its sorted position
+
 
 def main():
    array = [1, 5, 6, 3, 4, 2]
@@ -24,3 +26,4 @@ def main():
 if __name__ == "__main__":
    main()
 
+ 
