@@ -1,23 +1,26 @@
 def insert(array, element):
-    if len(array) == 0 or array[-1] <= element:
-        array.append(element)
-        return
-    last = array.pop()  # Remove and store the last element
-    insert(array, element)  # Recursively insert element into smaller array
-    array.append(last)  # Reinsert the last element
+   """Inserts an element into a sorted array."""
+   if not array or element >= array[-1]:
+       array.append(element)  # Base case: append if empty or at correct position
+       return
+   last = array.pop()  # Temporarily remove last element
+   insert(array, element)  # Recursively insert into smaller array
+   array.append(last)  # Reinsert last element in its sorted position
 
 def sortArrayRecursive(array):
-    if len(array) == 0:
-        return
-    last = array.pop()
-    sortArrayRecursive(array)
-    insert(array, last)
+   """Sorts an array using insertion sort recursively."""
+   if not array:
+       return  # Base case: empty array is already sorted
+   last = array.pop()  # Remove last element
+   sortArrayRecursive(array)  # Sort remaining elements
+   insert(array, last)  # Insert last element in its sorted position
 
 def main():
-    array = [1,5,6,3,4,2]  # Convert input to numbers
-    print("Before sorting:", array)
-    sortArrayRecursive(array)
-    print("After sorting:", array)
+   array = [1, 5, 6, 3, 4, 2]
+   print("Before sorting:", array)
+   sortArrayRecursive(array)
+   print("After sorting:", array)
 
 if __name__ == "__main__":
-    main()
+   main()
+
