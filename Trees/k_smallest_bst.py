@@ -12,7 +12,7 @@ class Solution:
         stack = []
         cur = root # node currently visiting
 
-        while cur and stack:
+        while cur or stack:
             # to the left most val = min
             while cur:
                 stack.append(cur)
